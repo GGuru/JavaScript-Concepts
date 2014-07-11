@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+#outerDiv, #innerDiv {
+	text-align: center;
+	border: 2px dashed #c00;
+}
+
+#outerDiv{	
+  position: relative;
+  width: 40%;
+  height: 400px;
+  margin: 20px auto;  
+}
+
+#innerDiv{	
+  position: absolute;	
+  width: 200px;	
+  height: 100px;	
+  top: 30%;	
+  left: 40%;  
+}
+</style>
+</head>
+<body>
+<div id="outerDiv">	
+	Outer Div
+	<div id="innerDiv">
+		Inner Div
+	</div>
+</div>
+<script>
+
+function outerDivHandler() {	
+	alert("outer handler");
+}
+function innerDivHandler() {
+	alert("inner handler");
+}
+var element1 = document.getElementById("outerDiv");
+element1.addEventListener("click", outerDivHandler, false);
+
+var element2 = document.getElementById("innerDiv");
+element2.addEventListener("click", innerDivHandler, true);
+</script>
+</body>
+</html>
